@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.polyvi.xface.extension.messaging"
+    version="1.0.0">
+    <name>Messaging</name>
+    <description>xFace Messaging Extension</description>
+    <license>GPL v3</license>
+    <keywords>cordova,xface,messaging</keywords>
+
+    <js-module src="www/Message.js" name="Message">
+        <clobbers target="window.Message" />
+    </js-module>
+
+    <js-module src="www/MessageTypes.js" name="MessageTypes">
+        <clobbers target="window.MessageTypes" />
+    </js-module>
+
+    <js-module src="www/Messaging.js" name="Messaging">
+        <clobbers target="xFace.Messaging" />
+    </js-module>
+
+     <!-- ios -->
+     <platform name="ios">
+         <config-file target="config.xml" parent="/*">
+             <feature name="Messaging">
+                 <param name="ios-package" value="XMessagingExt"/>
+             </feature>
+         </config-file>
+
+         <header-file src="src/ios/XMessagingExt.h" />
+         <source-file src="src/ios/XMessagingExt.m" />
+         <framework src="MessageUI.framework" />
+     </platform>
+</plugin>
