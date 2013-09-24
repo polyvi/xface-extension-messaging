@@ -1,3 +1,4 @@
+cordova.define("com.polyvi.xface.extension.message.Message", function(require, exports, module) {
 /*
  Copyright 2012-2013, Polyvi Inc. (http://www.xface3.com)
  This program is distributed under the terms of the GNU General Public License.
@@ -32,7 +33,7 @@
  * @param {String} [subject=null] 信息的标题
  * @param {String} [body=null] 信息的内容
  * @param {String} [destinationAddresses=null] 目的地址
- * @param {String} [messageType=null] 信息的类型（短信，彩信，Email），取值范围见{{#crossLink "MessageTypes"}}{{/crossLink}}
+ * @param {String} [messageType=null] 信息的类型（短信，彩信，Email），取值范围见{{#crossLink "xFace.MessageTypes"}}{{/crossLink}}
  * @param {Date} [date=null] 信息的日期
  * @param {Boolean} [isRead=null] 信息是否已读
  * @platform Android, iOS, WP8
@@ -73,7 +74,7 @@ var Message = function(messageId, subject, body, destinationAddresses, messageTy
  */
     this.destinationAddresses = destinationAddresses || null;
 /**
- * 信息的类型（短信，彩信，Email），目前支持短信和Email（Android, iOS, WP8），取值范围见 {{#crossLink "MessageTypes"}}{{/crossLink}}
+ * 信息的类型（短信，彩信，Email），目前支持短信和Email（Android, iOS, WP8），取值范围见 {{#crossLink "xFace.MessageTypes"}}{{/crossLink}}
  * @property messageType
  * @type String
  * @platform Android, iOS, WP8
@@ -99,3 +100,4 @@ var Message = function(messageId, subject, body, destinationAddresses, messageTy
 };
 
 module.exports = Message;
+});

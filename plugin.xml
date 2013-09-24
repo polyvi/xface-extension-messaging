@@ -16,21 +16,42 @@
     <js-module src="www/MessageTypes.js" name="MessageTypes">
         <clobbers target="window.MessageTypes" />
     </js-module>
-
-    <js-module src="www/Messaging.js" name="Messaging">
-        <clobbers target="xFace.Messaging" />
-    </js-module>
+	
+	<!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Messaging">
+                <param name="android-package" value="com.polyvi.xface.extension.XMessagingExt"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.SEND_SMS" />
+            <uses-permission android:name="android.permission.READ_SMS" />
+			<uses-permission android:name="android.permission.RECEIVE_SMS" />
+        </config-file>
+		<js-module src="www/android/Messaging.js" name="Messaging">
+            <clobbers target="xFace.Messaging" />
+        </js-module>
+		<js-module src="www/android/MessageFolderTypes.js" name="MessageFolderTypes">
+            <clobbers target="window.MessageFolderTypes" />
+        </js-module>
+        <source-file src="src/android/XMessagingExt.java" target-dir="src/com/polyvi/xface/extension" />
+     </platform>
 
      <!-- ios -->
      <platform name="ios">
-         <config-file target="config.xml" parent="/*">
-             <feature name="Messaging">
-                 <param name="ios-package" value="XMessagingExt"/>
-             </feature>
-         </config-file>
+        <config-file target="config.xml" parent="/*">
+            <feature name="Messaging">
+                <param name="ios-package" value="XMessagingExt"/>
+            </feature>
+        </config-file>
+		 
+		<js-module src="www/ios/Messaging.js" name="Messaging">
+            <clobbers target="xFace.Messaging" />
+        </js-module>
 
-         <header-file src="src/ios/XMessagingExt.h" />
-         <source-file src="src/ios/XMessagingExt.m" />
-         <framework src="MessageUI.framework" />
+        <header-file src="src/ios/XMessagingExt.h" />
+        <source-file src="src/ios/XMessagingExt.m" />
+        <framework src="MessageUI.framework" />
      </platform>
 </plugin>
