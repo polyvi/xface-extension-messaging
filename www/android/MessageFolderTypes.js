@@ -1,4 +1,3 @@
-cordova.define("com.polyvi.xface.extension.message.MessageFolderTypes", function(require, exports, module) {
 /*
  This file was modified from or inspired by Apache Cordova.
 
@@ -78,4 +77,3 @@ MessageFolderTypes.OUTBOX = "OUTBOX"; //发件箱
 MessageFolderTypes.SENTBOX = "SENT";  //发出的信息
 
 module.exports = MessageFolderTypes;
-});

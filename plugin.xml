@@ -10,11 +10,11 @@
     <keywords>cordova,xface,messaging</keywords>
 
     <js-module src="www/Message.js" name="Message">
-        <clobbers target="window.Message" />
+        <clobbers target="xFace.Message" />
     </js-module>
 
     <js-module src="www/MessageTypes.js" name="MessageTypes">
-        <clobbers target="window.MessageTypes" />
+        <clobbers target="xFace.MessageTypes" />
     </js-module>
 
     <js-module src="www/Messaging.js" name="Messaging">
