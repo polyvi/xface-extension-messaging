@@ -17,10 +17,6 @@
         <clobbers target="xFace.MessageTypes" />
     </js-module>
 
-    <js-module src="www/Messaging.js" name="Messaging">
-        <clobbers target="xFace.Messaging" />
-    </js-module>
-
 	<!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
@@ -49,7 +45,9 @@
                 <param name="ios-package" value="XMessagingExt"/>
             </feature>
         </config-file>
-
+        <js-module src="www/Messaging.js" name="Messaging">
+            <clobbers target="xFace.Messaging" />
+        </js-module>
         <header-file src="src/ios/XMessagingExt.h" />
         <source-file src="src/ios/XMessagingExt.m" />
         <framework src="MessageUI.framework" />
@@ -62,7 +60,9 @@
                 <param name="wp-package" value="Messaging"/>
             </feature>
         </config-file>
-
+        <js-module src="www/Messaging.js" name="Messaging">
+            <clobbers target="xFace.Messaging" />
+        </js-module>
         <source-file src="src/wp/XMessagingExt.cs" />
     </platform>
 </plugin>
