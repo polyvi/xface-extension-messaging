@@ -33,7 +33,7 @@
             <clobbers target="xFace.Messaging" />
         </js-module>
 		<js-module src="www/android/MessageFolderTypes.js" name="MessageFolderTypes">
-            <clobbers target="window.MessageFolderTypes" />
+            <clobbers target="xFace.MessageFolderTypes" />
         </js-module>
         <source-file src="src/android/XMessagingExt.java" target-dir="src/com/polyvi/xface/extension" />
      </platform>
