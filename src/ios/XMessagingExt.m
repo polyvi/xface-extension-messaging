@@ -26,9 +26,11 @@
 //
 
 #import "XMessagingExt.h"
+
 #import <Cordova/CDVInvokedUrlCommand.h>
 #import <Cordova/CDVPluginResult.h>
 #import <Cordova/NSArray+Comparisons.h>
+#import <Cordova/CDVDebug.h>
 
 #define MESSAGE_TYPE           @"messageType"
 #define MESSAGE_BODY           @"body"
@@ -145,7 +147,7 @@
 
     if (MessageComposeResultSent == result)
     {
-        XLogI(@"Message sent");
+        DLog(@"Message sent");
         NSMutableDictionary* message = [NSMutableDictionary dictionaryWithCapacity:3];
         [message setObject:self.messageType forKey:MESSAGE_TYPE];
         [message setObject:self.messageBody forKey:MESSAGE_BODY];
@@ -154,7 +156,7 @@
     }
     else
     {
-        XLogE(@"Message failed");
+        ALog(@"Message failed");
         extensionResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     }
     [self.commandDelegate sendPluginResult:extensionResult callbackId:self.callbackId];
@@ -168,7 +170,7 @@
 
     if (MFMailComposeResultSent == result)
     {
-        XLogI(@"Email sent");
+        DLog(@"Email sent");
         NSMutableDictionary* message = [NSMutableDictionary dictionaryWithCapacity:4];
         [message setObject:self.messageType forKey:MESSAGE_TYPE];
         [message setObject:self.messageBody forKey:MESSAGE_BODY];
@@ -178,7 +180,7 @@
     }
     else
     {
-        XLogE(@"Email failed");
+        ALog(@"Email failed");
         extensionResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     }
     [self.commandDelegate sendPluginResult:extensionResult callbackId:self.callbackId];
