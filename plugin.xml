@@ -6,7 +6,7 @@
     version="1.0.0">
     <name>Messaging</name>
     <description>xFace Messaging Extension</description>
-    <license>GPL v3</license>
+    <license>GPLv3</license>
     <keywords>cordova,xface,messaging</keywords>
 
     <js-module src="www/Message.js" name="Message">
