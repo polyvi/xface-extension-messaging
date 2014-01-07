@@ -21,3 +21,6 @@
 -->
 
 # Release Notes
+### 1.0.0 Tue Jan 07 2014 16:08:20 GMT+0800 (CST)
+ *  update plugin license
+ *  [android]Modify source codes package path
