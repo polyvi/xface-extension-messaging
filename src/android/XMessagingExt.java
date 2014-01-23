@@ -81,7 +81,7 @@ public class XMessagingExt extends CordovaPlugin {
 
     private BroadcastReceiver mSendSMSBroadcastReceiver = null;
 
-    private BroadcastReceiver mMsgReceiveBroadcaseReveiver = null;
+    private BroadcastReceiver mMsgReceiveBroadcaseReceiver = null;
 
     private enum SMS_RESULT_STATUS {
         SEND_SUCCESS, // 发送成功
@@ -96,13 +96,13 @@ public class XMessagingExt extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         mContext = cordova.getActivity();
-        genMsgReceiveBroadcastReceive();
+        genMsgReceiveBroadcastReceiver();
         regMsgReceiver();
     }
 
-    private void genMsgReceiveBroadcastReceive() {
-        if (null == mMsgReceiveBroadcaseReveiver) {
-            mMsgReceiveBroadcaseReveiver = new BroadcastReceiver() {
+    private void genMsgReceiveBroadcastReceiver() {
+        if (null == mMsgReceiveBroadcaseReceiver) {
+            mMsgReceiveBroadcaseReceiver = new BroadcastReceiver() {
                 @Override
                 public void onReceive(Context context, Intent intent) {
                     if (INTENT_ACTION.equals(intent.getAction())) {
@@ -169,7 +169,7 @@ public class XMessagingExt extends CordovaPlugin {
     }
 
     private void regMsgReceiver() {
-        mContext.registerReceiver(mMsgReceiveBroadcaseReveiver,
+        mContext.registerReceiver(mMsgReceiveBroadcaseReceiver,
                 new IntentFilter(INTENT_ACTION));
     }
 
@@ -211,9 +211,9 @@ public class XMessagingExt extends CordovaPlugin {
             mContext.unregisterReceiver(mSendSMSBroadcastReceiver);
             mSendSMSBroadcastReceiver = null;
         }
-        if (null != mMsgReceiveBroadcaseReveiver) {
-            mContext.unregisterReceiver(mMsgReceiveBroadcaseReveiver);
-            mMsgReceiveBroadcaseReveiver = null;
+        if (null != mMsgReceiveBroadcaseReceiver) {
+            mContext.unregisterReceiver(mMsgReceiveBroadcaseReceiver);
+            mMsgReceiveBroadcaseReceiver = null;
         }
     }
 
@@ -343,6 +343,7 @@ public class XMessagingExt extends CordovaPlugin {
         emailIntent.setType("text/plain");
         emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, body);
         mContext.startActivity(emailIntent);
+        mCallbackContext.success();
     }
 
     /**
