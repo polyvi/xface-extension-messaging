@@ -24,3 +24,8 @@
 ### 1.0.0 Tue Jan 07 2014 16:08:20 GMT+0800 (CST)
  *  update plugin license
  *  [android]Modify source codes package path
+### 1.0.1 Mon Jan 27 2014 15:56:12 GMT+0800 (CST)
+ *  batch modify .reviewboard
+ *  #1[android][fix bug]Fix there is not a success callback when sended e-mail successfully
+ *  [android]Adjust file format
+ *  Incremented plugin version on dev branch to 1.0.1-dev
