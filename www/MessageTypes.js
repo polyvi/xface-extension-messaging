@@ -25,7 +25,6 @@
  * 该类定义一些常量，用于标识信息的类型（Android, iOS, WP8）<br/>
  * 相关参考： {{#crossLink "Messaging"}}{{/crossLink}}
  * @class MessageTypes
- * @namespace
  * @static
  * @platform Android, iOS, WP8
  * @since 3.0.0

@@ -26,7 +26,6 @@
  * 该类定义了信息的一系列属性（Android, iOS, WP8）<br/>
  * 相关参考： {{#crossLink "MessageTypes"}}{{/crossLink}}
  * @class Message
- * @namespace
  * @constructor
  * @param {String} [messageId=null] 唯一标识符，仅在 Native端设置
  * @param {String} [subject=null] 信息的标题

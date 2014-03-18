@@ -27,7 +27,6 @@
  * 该类定义一些常量，用于标识信息文件夹的类型（Android）
  * 相关参考： {{#crossLink "Messaging"}}{{/crossLink}}
  * @class MessageFolderTypes
- * @namespace
  * @static
  * @platform Android
  * @since 3.0.0
