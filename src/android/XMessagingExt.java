@@ -50,6 +50,7 @@ import android.provider.BaseColumns;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 
+import com.polyvi.xface.XFaceMainActivity;
 import com.polyvi.xface.event.XEvent;
 import com.polyvi.xface.event.XEventType;
 import com.polyvi.xface.event.XSystemEventCenter;
@@ -121,7 +122,7 @@ public class XMessagingExt extends CordovaPlugin {
                             XEvent evt = XEvent.createEvent(
                                     XEventType.MSG_RECEIVED,
                                     receivedMsgs.toString());
-                            XSystemEventCenter.getInstance()
+                            ((XFaceMainActivity) mContext).getEventCenter()
                                     .sendEventAsync(evt);
                         }
                     }
