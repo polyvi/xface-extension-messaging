@@ -35,3 +35,10 @@
 
  *  removed empty namespace from doc
  *  Incremented plugin version on dev branch to 1.0.2-dev
+
+
+## 1.0.3 (Thu Apr 03 2014)
+
+
+ *  [Android]Add onload attribute
+ *  Incremented plugin version on dev branch to 1.0.3-dev
