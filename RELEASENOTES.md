@@ -42,3 +42,10 @@
 
  *  [Android]Add onload attribute
  *  Incremented plugin version on dev branch to 1.0.3-dev
+
+
+## 1.0.4 (Fri Apr 04 2014)
+
+
+ *  change the way of get Event
+ *  Incremented plugin version on dev branch to 1.0.4-dev
