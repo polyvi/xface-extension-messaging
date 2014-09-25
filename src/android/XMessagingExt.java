@@ -34,6 +34,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.polyvi.xface.utils.XUtils;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -49,13 +51,6 @@ import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
-
-import com.polyvi.xface.XFaceMainActivity;
-import com.polyvi.xface.event.XEvent;
-import com.polyvi.xface.event.XEventType;
-import com.polyvi.xface.event.XSystemEventCenter;
-
-import com.polyvi.xface.util.XUtils;
 
 public class XMessagingExt extends CordovaPlugin {
     private static final Uri mSMSContentUri = Uri.parse("content://sms/");
@@ -119,11 +114,7 @@ public class XMessagingExt extends CordovaPlugin {
                                         .createFromPdu((byte[]) pdus[i]);
                             }
                             JSONArray receivedMsgs = buildSmsList(msgs);
-                            XEvent evt = XEvent.createEvent(
-                                    XEventType.MSG_RECEIVED,
-                                    receivedMsgs.toString());
-                            ((XFaceMainActivity) mContext).getEventCenter()
-                                    .sendEventAsync(evt);
+                            //TODO useless?
                         }
                     }
                 }
